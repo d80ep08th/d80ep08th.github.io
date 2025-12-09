@@ -530,5 +530,375 @@ document.addEventListener('DOMContentLoaded', function() {
         quoteObserver.observe(quoteBox);
     }
 
-    console.log('🎨 Anime.js animations loaded successfully!');
+    // ===================================
+    // 21. CURSOR FOLLOWER EFFECT
+    // ===================================
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    const cursorFollower = document.createElement('div');
+    cursorFollower.classList.add('cursor-follower');
+    document.body.appendChild(cursorFollower);
+
+    let cursorX = 0, cursorY = 0;
+    let followerX = 0, followerY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+
+        anime({
+            targets: cursor,
+            left: cursorX,
+            top: cursorY,
+            duration: 0,
+            easing: 'linear'
+        });
+
+        anime({
+            targets: cursorFollower,
+            left: cursorX,
+            top: cursorY,
+            duration: 800,
+            easing: 'easeOutExpo'
+        });
+    });
+
+    // ===================================
+    // 22. MAGNETIC BUTTON EFFECTS
+    // ===================================
+    const magneticElements = document.querySelectorAll('.btn, .nav-link, .project-card');
+
+    magneticElements.forEach(el => {
+        el.addEventListener('mouseenter', function(e) {
+            anime({
+                targets: cursor,
+                scale: 2,
+                duration: 300,
+                easing: 'easeOutExpo'
+            });
+
+            anime({
+                targets: cursorFollower,
+                scale: 1.5,
+                duration: 300,
+                easing: 'easeOutExpo'
+            });
+        });
+
+        el.addEventListener('mouseleave', function() {
+            anime({
+                targets: cursor,
+                scale: 1,
+                duration: 300,
+                easing: 'easeOutExpo'
+            });
+
+            anime({
+                targets: cursorFollower,
+                scale: 1,
+                duration: 300,
+                easing: 'easeOutExpo'
+            });
+        });
+
+        el.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            anime({
+                targets: this,
+                translateX: x * 0.3,
+                translateY: y * 0.3,
+                duration: 500,
+                easing: 'easeOutExpo'
+            });
+        });
+
+        el.addEventListener('mouseleave', function() {
+            anime({
+                targets: this,
+                translateX: 0,
+                translateY: 0,
+                duration: 500,
+                easing: 'easeOutElastic(1, .6)'
+            });
+        });
+    });
+
+    // ===================================
+    // 23. TEXT REVEAL ON SCROLL
+    // ===================================
+    const textElements = document.querySelectorAll('.hero-description, .about-text, .project-description');
+
+    textElements.forEach(el => {
+        const text = el.textContent;
+        el.textContent = '';
+        const chars = text.split('');
+
+        chars.forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.opacity = '0';
+            span.style.display = 'inline-block';
+            el.appendChild(span);
+        });
+
+        const textObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    anime({
+                        targets: entry.target.querySelectorAll('span'),
+                        opacity: [0, 1],
+                        translateY: [20, 0],
+                        duration: 50,
+                        easing: 'easeOutExpo',
+                        delay: anime.stagger(10)
+                    });
+                    textObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        textObserver.observe(el);
+    });
+
+    // ===================================
+    // 24. ADVANCED PARALLAX LAYERS
+    // ===================================
+    const parallaxElements = document.querySelectorAll('.project-card, .section-title');
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+
+        parallaxElements.forEach((el, index) => {
+            const rect = el.getBoundingClientRect();
+            const offsetTop = rect.top + scrolled;
+            const distance = scrolled - offsetTop;
+            const speed = 0.05 + (index * 0.02);
+
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.style.transform = `translateY(${distance * speed}px) translateZ(0)`;
+            }
+        });
+    });
+
+    // ===================================
+    // 25. COLOR SHIFT ON SCROLL
+    // ===================================
+    window.addEventListener('scroll', () => {
+        const scrollPercentage = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+        const hue = 210 + (scrollPercentage * 0.5); // Shift from blue through purple
+        document.body.style.background = `linear-gradient(135deg, hsl(${hue}, 20%, 98%) 0%, hsl(${hue + 10}, 15%, 100%) 100%)`;
+    });
+
+    // ===================================
+    // 26. RIPPLE EFFECT ON CLICK
+    // ===================================
+    document.addEventListener('click', (e) => {
+        const ripple = document.createElement('div');
+        ripple.classList.add('ripple');
+        ripple.style.left = e.clientX + 'px';
+        ripple.style.top = e.clientY + 'px';
+        document.body.appendChild(ripple);
+
+        anime({
+            targets: ripple,
+            scale: [0, 50],
+            opacity: [0.6, 0],
+            duration: 1000,
+            easing: 'easeOutExpo',
+            complete: () => ripple.remove()
+        });
+    });
+
+    // ===================================
+    // 27. SCROLL-TRIGGERED BURST ANIMATIONS
+    // ===================================
+    const burstElements = document.querySelectorAll('.project-title, h2, h3');
+
+    burstElements.forEach(el => {
+        const burstObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Create burst particles
+                    for (let i = 0; i < 12; i++) {
+                        const particle = document.createElement('div');
+                        particle.classList.add('burst-particle');
+                        const rect = entry.target.getBoundingClientRect();
+                        particle.style.left = (rect.left + rect.width / 2) + 'px';
+                        particle.style.top = (rect.top + rect.height / 2) + 'px';
+                        document.body.appendChild(particle);
+
+                        const angle = (Math.PI * 2 * i) / 12;
+                        const distance = 50 + Math.random() * 50;
+
+                        anime({
+                            targets: particle,
+                            translateX: Math.cos(angle) * distance,
+                            translateY: Math.sin(angle) * distance,
+                            scale: [1, 0],
+                            opacity: [1, 0],
+                            duration: 1000 + Math.random() * 500,
+                            easing: 'easeOutExpo',
+                            complete: () => particle.remove()
+                        });
+                    }
+
+                    // Animate the element itself
+                    anime({
+                        targets: entry.target,
+                        scale: [0.95, 1],
+                        duration: 600,
+                        easing: 'easeOutElastic(1, .6)'
+                    });
+
+                    burstObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.8 });
+
+        burstObserver.observe(el);
+    });
+
+    // ===================================
+    // 28. TILT EFFECT ON HOVER
+    // ===================================
+    projectCards.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+
+            anime({
+                targets: this,
+                rotateX: rotateX,
+                rotateY: rotateY,
+                duration: 500,
+                easing: 'easeOutQuad'
+            });
+        });
+
+        card.addEventListener('mouseleave', function() {
+            anime({
+                targets: this,
+                rotateX: 0,
+                rotateY: 0,
+                duration: 500,
+                easing: 'easeOutQuad'
+            });
+        });
+    });
+
+    // ===================================
+    // 29. WAVE ANIMATION ON SCROLL
+    // ===================================
+    const waveElements = document.querySelectorAll('.nav-link, .btn');
+
+    waveElements.forEach((el, index) => {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const waveOffset = Math.sin(scrolled * 0.01 + index) * 5;
+
+            el.style.transform = `translateY(${waveOffset}px)`;
+        });
+    });
+
+    // ===================================
+    // 30. MORPH ANIMATION FOR HERO
+    // ===================================
+    if (document.querySelector('.hero')) {
+        setInterval(() => {
+            anime({
+                targets: '.hero-title',
+                scale: [1, 1.02, 1],
+                duration: 3000,
+                easing: 'easeInOutSine'
+            });
+        }, 3000);
+    }
+
+    // ===================================
+    // 31. TRAIL EFFECT FOR CURSOR
+    // ===================================
+    const trail = [];
+    const trailLength = 8;
+
+    document.addEventListener('mousemove', (e) => {
+        const dot = document.createElement('div');
+        dot.classList.add('cursor-trail');
+        dot.style.left = e.clientX + 'px';
+        dot.style.top = e.clientY + 'px';
+        document.body.appendChild(dot);
+
+        trail.push(dot);
+
+        if (trail.length > trailLength) {
+            const oldDot = trail.shift();
+            oldDot.remove();
+        }
+
+        anime({
+            targets: dot,
+            scale: [1, 0],
+            opacity: [0.6, 0],
+            duration: 800,
+            easing: 'easeOutExpo',
+            complete: () => {
+                if (dot.parentNode) dot.remove();
+            }
+        });
+    });
+
+    // ===================================
+    // 32. SECTION ENTRANCE EXPLOSIONS
+    // ===================================
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach(section => {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    anime({
+                        targets: entry.target,
+                        opacity: [0, 1],
+                        scale: [0.98, 1],
+                        duration: 800,
+                        easing: 'easeOutExpo'
+                    });
+
+                    // Add shimmer effect
+                    const shimmer = document.createElement('div');
+                    shimmer.classList.add('shimmer');
+                    entry.target.style.position = 'relative';
+                    entry.target.appendChild(shimmer);
+
+                    anime({
+                        targets: shimmer,
+                        translateX: ['-100%', '100%'],
+                        opacity: [0, 0.5, 0],
+                        duration: 1500,
+                        easing: 'easeInOutQuad',
+                        complete: () => shimmer.remove()
+                    });
+
+                    sectionObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sectionObserver.observe(section);
+    });
+
+    console.log('🎨 Enhanced Anime.js + Three.js animations loaded successfully!');
+    console.log('🚀 Dramatic scroll and cursor animations activated!');
 });
