@@ -50,6 +50,8 @@ body {
     background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    opacity: 0;
+    overflow-x: hidden;
 }
 
 /* ===================================
@@ -383,6 +385,73 @@ a:hover {
 .footer-subtext {
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+/* ===================================
+   Animation Enhancements
+   =================================== */
+
+/* Initial states for animated elements */
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-cta .btn,
+.section-title,
+.project-card,
+.about-section,
+.strength-card,
+.timeline-item,
+.skill-category,
+.contact-text,
+.contact-links .btn {
+    opacity: 0;
+}
+
+/* Smooth transitions for all interactive elements */
+.btn,
+.nav-link,
+.project-card,
+.project-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced hover states */
+.project-card {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.btn {
+    will-change: transform, box-shadow;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Smooth image transitions */
+.project-image img {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* GPU acceleration for better performance */
+.hero,
+.nav,
+.project-card,
+.strength-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* ===================================
