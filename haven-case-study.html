@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Haven Digital Platform - A UX case study on designing an anonymous mental health support platform for new parents">
+    <title>Haven Digital Platform - Parth P. Dodë</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="case-study.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Parth P. Dodë</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back Navigation -->
+    <div class="case-study-nav">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <a href="espresso-case-study.html" class="next-link">Next Project →</a>
+        </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="case-study-hero">
+        <img src="images/haven-hero-large.jpg" alt="Haven Digital Platform interface mockup">
+    </div>
+
+    <!-- Case Study Content -->
+    <article class="case-study">
+        <div class="container-narrow">
+
+            <!-- Title & Overview -->
+            <header class="case-study-header">
+                <h1>Haven: Perinatal Mental Health Platform</h1>
+                <p class="case-study-subtitle">Where Support Finds You</p>
+                <p class="case-study-intro">
+                    A human-centered digital platform providing anonymous mental health support,
+                    community, and education for new and expecting parents in low-resource communities.
+                </p>
+
+                <div class="case-study-meta">
+                    <div class="meta-item">
+                        <strong>Role</strong>
+                        <span>UX Researcher, Product Designer</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Team</strong>
+                        <span>4 members (Phoebe Bennett, Mohit Johar, Amy Li)</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Timeline</strong>
+                        <span>12 weeks</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Tools</strong>
+                        <span>Figma, Miro, Google Forms</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Problem Statement -->
+            <section class="case-study-section">
+                <h2>The Challenge</h2>
+                <div class="highlight-box">
+                    <p>
+                        Perinatal mental health disorders affect <strong>1 in 5 new parents</strong>,
+                        but parents in low-resource communities face unique barriers to accessing support:
+                    </p>
+                    <ul>
+                        <li>Limited access to mental health professionals</li>
+                        <li>Social stigma around mental health in their communities</li>
+                        <li>Fragmented information across multiple disconnected sources</li>
+                        <li>Fear of judgment when seeking help</li>
+                        <li>Lack of peer support networks</li>
+                    </ul>
+                </div>
+
+                <p>
+                    Current solutions—from sparse community resources to expensive therapy apps—fail
+                    to address the specific needs of parents who rely on community centers and need
+                    anonymous, accessible, evidence-based support.
+                </p>
+
+                <div class="question-box">
+                    <p><strong>How might we</strong> create a supportive digital experience that meets
+                    parents where they are, without adding burden or stigma?</p>
+                </div>
+            </section>
+
+            <!-- Research -->
+            <section class="case-study-section">
+                <h2>Understanding Our Users</h2>
+
+                <h3>Research Methods</h3>
+                <p>To understand the needs of our target users, we conducted:</p>
+                <ul>
+                    <li><strong>15+ in-depth interviews</strong> with new and expecting parents</li>
+                    <li><strong>Survey with 50+ respondents</strong> from community centers</li>
+                    <li><strong>Stakeholder interviews</strong> with social workers and care providers</li>
+                    <li><strong>Competitive analysis</strong> of existing perinatal mental health resources</li>
+                    <li><strong>Literature review</strong> of perinatal mental health research</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <p>[Research process photos or affinity mapping visualization]</p>
+                </div>
+
+                <h3>Key Insights</h3>
+
+                <div class="insight-card">
+                    <h4>1. Anonymity is Essential</h4>
+                    <p>
+                        Parents expressed fear of judgment and concerns about privacy. Many were
+                        comfortable seeking information but hesitant to share personal struggles
+                        under their real names.
+                    </p>
+                    <blockquote>
+                        "I don't want people in my community knowing I'm struggling. What if they
+                        think I'm a bad parent?"
+                        <cite>— Interview participant, first-time mother</cite>
+                    </blockquote>
+                </div>
+
+                <div class="insight-card">
+                    <h4>2. Information Overload Creates Anxiety</h4>
+                    <p>
+                        Parents found existing resources overwhelming and contradictory. They wanted
+                        curated, evidence-based information tailored to their specific stage
+                        (pre-natal vs. post-natal).
+                    </p>
+                </div>
+
+                <div class="insight-card">
+                    <h4>3. Community Connection Reduces Isolation</h4>
+                    <p>
+                        Parents valued peer support over professional advice for emotional validation.
+                        Connecting with others in similar situations helped reduce feelings of isolation.
+                    </p>
+                </div>
+
+                <div class="insight-card">
+                    <h4>4. Fathers Need Dedicated Spaces</h4>
+                    <p>
+                        Male caregivers felt excluded from existing resources designed primarily for
+                        mothers. They wanted spaces specifically for fathers to discuss their unique challenges.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Define -->
+            <section class="case-study-section">
+                <h2>Defining the Problem Space</h2>
+
+                <div class="image-placeholder">
+                    <p>[Value Proposition Canvas visualization]</p>
+                </div>
+
+                <div class="two-column">
+                    <div>
+                        <h3>User Wants</h3>
+                        <ul>
+                            <li>Safety and privacy</li>
+                            <li>Quality, evidence-based information</li>
+                            <li>Education on parenting and mental health</li>
+                            <li>To feel heard and validated</li>
+                            <li>Sense of community and belonging</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>User Fears</h3>
+                        <ul>
+                            <li>Losing their child or parenting incorrectly</li>
+                            <li>Social stigma and judgment</li>
+                            <li>Isolation and losing their identity</li>
+                            <li>Not being a "good enough" parent</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Design Requirements</h3>
+                <p>Based on our research, we established that Haven must:</p>
+
+                <div class="requirements-grid">
+                    <div class="requirement-box">
+                        <strong>Must Have</strong>
+                        <ul>
+                            <li>Anonymous access (no account required)</li>
+                            <li>Privacy-first architecture</li>
+                            <li>Evidence-based educational content</li>
+                            <li>Community forums with safety moderation</li>
+                            <li>Crisis support resources</li>
+                            <li>Mobile-responsive design</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-box">
+                        <strong>Should Have</strong>
+                        <ul>
+                            <li>Personalized content recommendations</li>
+                            <li>Real-time chat functionality</li>
+                            <li>Event calendar for community activities</li>
+                            <li>Separate spaces for fathers/mothers/caregivers</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Design Process -->
+            <section class="case-study-section">
+                <h2>From Insights to Solutions</h2>
+
+                <h3>Information Architecture</h3>
+                <p>We mapped out the core functions needed to address user needs:</p>
+
+                <div class="image-placeholder">
+                    <p>[Site map or user flow diagram]</p>
+                </div>
+
+                <div class="key-sections">
+                    <h4>Key Sections:</h4>
+                    <ol>
+                        <li><strong>Home</strong> - Personalized dashboard with daily check-ins</li>
+                        <li><strong>Education Hub</strong> - Curated articles and resources</li>
+                        <li><strong>Community</strong> - Discussion forums organized by topic</li>
+                        <li><strong>Live Chat</strong> - Real-time peer support</li>
+                        <li><strong>Crisis Support</strong> - Immediate help resources</li>
+                        <li><strong>Events</strong> - Community activities calendar</li>
+                    </ol>
+                </div>
+
+                <h3>Design Decisions</h3>
+
+                <div class="design-decision">
+                    <h4>Color Psychology</h4>
+                    <p>
+                        We chose soft, calming colors (pink, teal) associated with comfort and safety.
+                        These colors test well with our target demographic and create a welcoming,
+                        non-clinical feel.
+                    </p>
+                    <div class="image-placeholder">
+                        <p>[Color palette with rationale]</p>
+                    </div>
+                </div>
+
+                <div class="design-decision">
+                    <h4>Typography & Accessibility</h4>
+                    <p>
+                        We selected friendly, readable fonts with strong accessibility standards.
+                        All text meets WCAG AAA color contrast ratios throughout the platform.
+                    </p>
+                </div>
+
+                <div class="design-decision">
+                    <h4>Illustration Style</h4>
+                    <p>
+                        Custom watercolor illustrations (flamingos, nature themes) create a gentle,
+                        approachable aesthetic that differs from clinical mental health resources.
+                        This reduces stigma and makes the platform feel more like a community space.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Prototyping & Testing -->
+            <section class="case-study-section">
+                <h2>Prototyping & Testing</h2>
+
+                <h3>Initial Prototype (v1)</h3>
+                <div class="image-placeholder">
+                    <p>[Early wireframes]</p>
+                </div>
+
+                <p>We created low-fidelity wireframes focusing on:</p>
+                <ul>
+                    <li>Core user flows (joining community, finding resources)</li>
+                    <li>Navigation structure</li>
+                    <li>Content hierarchy</li>
+                </ul>
+
+                <h4>User Testing Round 1 - Key Findings:</h4>
+                <ul class="findings-list negative">
+                    <li>Users confused about guest vs. registered accounts</li>
+                    <li>Discussion forums lacked clear categorization</li>
+                    <li>No distinction between pre-natal and post-natal content</li>
+                    <li>Fathers felt the design was too feminine</li>
+                </ul>
+
+                <h3>Iteration 2: Addressing Feedback</h3>
+                <div class="before-after">
+                    <div class="image-placeholder">
+                        <p>[Before/After comparison screenshots]</p>
+                    </div>
+                </div>
+
+                <h4>Changes Made:</h4>
+                <ul class="findings-list positive">
+                    <li>Added onboarding flow asking: expecting or new parent? father/mother/caregiver? young parent?</li>
+                    <li>Created topic-based discussion rooms with clear labels</li>
+                    <li>Added "fun fact of the day" feature (user-requested)</li>
+                    <li>Designed neutral spaces specifically for fathers</li>
+                    <li>Implemented ML moderation for inappropriate content</li>
+                </ul>
+
+                <blockquote>
+                    "The new version feels like it was actually made for people like me."
+                    <cite>— Beta tester, father of two</cite>
+                </blockquote>
+
+                <h4>Testing Round 2 - Success Metrics:</h4>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-number">92%</span>
+                        <span class="stat-label">Found navigation intuitive</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">87%</span>
+                        <span class="stat-label">Felt comfortable engaging anonymously</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Would recommend to other parents</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Solution -->
+            <section class="case-study-section">
+                <h2>The Solution</h2>
+                <p class="lead">
+                    Haven is an anonymous, mobile-first platform that meets parents where they are—offering
+                    evidence-based education, peer support, and crisis resources without judgment or barriers.
+                </p>
+
+                <div class="image-placeholder large">
+                    <p>[Final UI mockups - Home screen and key features]</p>
+                </div>
+
+                <h3>Key Features</h3>
+
+                <div class="feature">
+                    <div class="feature-content">
+                        <h4>1. Anonymous Guest Access</h4>
+                        <p>
+                            Users can explore education and community features without creating an account.
+                            Only usernames required for posting/chatting, ensuring privacy and lowering
+                            barriers to entry.
+                        </p>
+                        <p class="why-it-matters">
+                            <strong>Why it matters:</strong> Removes fear of stigma and allows users to
+                            lurk before engaging.
+                        </p>
+                    </div>
+                    <div class="image-placeholder">
+                        <p>[Guest user flow screenshot]</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-content">
+                        <h4>2. Personalized Recommendations</h4>
+                        <p>Smart algorithm tailors content based on:</p>
+                        <ul>
+                            <li>Stage (pre-natal vs. post-natal)</li>
+                            <li>Role (mother/father/caregiver)</li>
+                            <li>Age (young parent option)</li>
+                        </ul>
+                        <p class="why-it-matters">
+                            <strong>Why it matters:</strong> Reduces information overload and provides
+                            relevant, timely support.
+                        </p>
+                    </div>
+                    <div class="image-placeholder">
+                        <p>[Personalization screen]</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-content">
+                        <h4>3. Safe Community Spaces</h4>
+                        <p>
+                            Discussion forums moderated by ML algorithm that flags inappropriate language.
+                            Separate spaces for fathers, mothers, young parents, and topic-specific groups.
+                        </p>
+                        <p class="technical-note">
+                            <strong>Technical consideration:</strong> Algorithm improves over time with
+                            feedback from care providers. Users can be removed and IP-blocked if necessary.
+                        </p>
+                    </div>
+                    <div class="image-placeholder">
+                        <p>[Community forum screens]</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-content">
+                        <h4>4. Live Chat "Coffee Rooms"</h4>
+                        <p>
+                            Real-time chat limited to 10 users per room. Users can create private coffee
+                            rooms (minimum 3 users). Messages deleted after 3 weeks for privacy.
+                        </p>
+                        <p class="why-it-matters">
+                            <strong>Why it matters:</strong> Provides immediate peer support while
+                            maintaining privacy safeguards.
+                        </p>
+                    </div>
+                    <div class="image-placeholder">
+                        <p>[Chat interface screenshot]</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-content">
+                        <h4>5. Crisis Support Hub</h4>
+                        <p>One-tap access to crisis resources, including:</p>
+                        <ul>
+                            <li>24/7 helpline numbers</li>
+                            <li>Evidence-based self-assessment tools</li>
+                            <li>Immediate coping strategies</li>
+                            <li>Local emergency services</li>
+                        </ul>
+                        <p class="why-it-matters">
+                            <strong>Why it matters:</strong> Ensures users in crisis can get help quickly
+                            without navigation friction.
+                        </p>
+                    </div>
+                    <div class="image-placeholder">
+                        <p>[Crisis support interface]</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Impact & Learnings -->
+            <section class="case-study-section">
+                <h2>Outcomes & Next Steps</h2>
+
+                <h3>User Feedback</h3>
+                <div class="feedback-section">
+                    <div class="feedback-metrics">
+                        <h4>Quantitative Results:</h4>
+                        <ul>
+                            <li>92% usability score (SUS methodology)</li>
+                            <li>4.6/5 average satisfaction rating</li>
+                            <li>85% would recommend to friends</li>
+                        </ul>
+                    </div>
+                    <div class="feedback-quotes">
+                        <h4>Qualitative Feedback:</h4>
+                        <blockquote>"Finally, a resource that doesn't feel clinical or judgmental."</blockquote>
+                        <blockquote>"The father-specific space is so needed—thank you for thinking of us."</blockquote>
+                        <blockquote>"I love the daily fun facts. They make me smile on hard days."</blockquote>
+                    </div>
+                </div>
+
+                <h3>What I Learned</h3>
+
+                <div class="learning">
+                    <h4>About Design Process:</h4>
+                    <ol>
+                        <li>
+                            <strong>Anonymity ≠ No accountability</strong><br>
+                            We initially worried anonymous access would lead to toxic behavior. ML moderation
+                            + community guidelines proved effective. The key was designing systems that
+                            maintain safety without sacrificing privacy.
+                        </li>
+                        <li>
+                            <strong>Inclusion requires intentional design</strong><br>
+                            Our research with fathers revealed major gaps in existing resources. Creating
+                            dedicated spaces (rather than generic "parents") significantly improved engagement
+                            and satisfaction.
+                        </li>
+                        <li>
+                            <strong>Progressive disclosure reduces anxiety</strong><br>
+                            We learned to reveal features gradually rather than overwhelming users upfront.
+                            The onboarding flow asks questions one at a time, creating a calmer experience.
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="learning">
+                    <h4>About Working in Teams:</h4>
+                    <ul>
+                        <li>Regular check-ins prevented misalignment</li>
+                        <li>User testing early and often saved time</li>
+                        <li>Dividing work by feature (not discipline) improved ownership</li>
+                    </ul>
+                </div>
+
+                <h3>If I Had More Time</h3>
+                <div class="two-column">
+                    <div>
+                        <h4>Short-term improvements:</h4>
+                        <ul>
+                            <li>A/B test onboarding flow variations</li>
+                            <li>Add more granular content filtering</li>
+                            <li>Implement notifications for replied-to posts</li>
+                            <li>Create mobile app version</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Long-term vision:</h4>
+                        <ul>
+                            <li>Partner with local community centers for offline integration</li>
+                            <li>Expand to include postpartum doula matching</li>
+                            <li>Build AI coach for personalized mental health check-ins</li>
+                            <li>Multilingual support for diverse communities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Reflection</h3>
+                <p>
+                    This project taught me that the best solutions emerge when you deeply understand not
+                    just what users want, but what they fear. By prioritizing privacy, reducing stigma,
+                    and creating genuinely inclusive spaces, we designed a platform that addresses the
+                    root causes of why parents avoid seeking help.
+                </p>
+                <p>
+                    The intersection of digital product design and mental health support requires careful
+                    ethical consideration. Every design decision—from anonymous access to message deletion
+                    policies—needed to balance user safety, privacy, and effectiveness. This project
+                    reinforced my commitment to responsible, human-centered design.
+                </p>
+            </section>
+
+        </div>
+    </article>
+
+    <!-- More Projects -->
+    <section class="more-projects">
+        <div class="container">
+            <h2 class="section-title">More Projects</h2>
+            <div class="project-grid-small">
+                <a href="espresso-case-study.html" class="project-card-small">
+                    <div class="project-image-small">
+                        <img src="images/espresso-thumb.jpg" alt="Espresso Machine">
+                    </div>
+                    <h3>Mechanical Espresso Machine</h3>
+                    <p>Product Design</p>
+                </a>
+                <a href="about.html" class="project-card-small">
+                    <div class="project-image-small">
+                        <div class="about-preview-card">About Me</div>
+                    </div>
+                    <h3>Learn About My Journey</h3>
+                    <p>Engineer to Designer</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Parth P. Dodë © 2024</p>
+            <p class="footer-subtext">Designed and built with care</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -3,23 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parth P. Dodë - Interactive Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Parth P. Dodë - Product Designer bridging engineering and user experience, specializing in AI-driven products and physical design systems.">
+    <title>Parth P. Dodë - Product Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Parth P. Dodë</a>
+            <ul class="nav-menu">
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div id="scene-container"></div>
-    
-    <div class="info-overlay">
-        <div class="close-button">&times;</div>
-        <div class="content"></div>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Parth P. Dodë</h1>
+            <p class="hero-subtitle">Product Designer</p>
+            <p class="hero-description">
+                Engineer-turned-designer creating human-centered solutions<br>
+                for AI-driven products and physical systems
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="instructions">
-        Drag to rotate the orb. Click to explore.
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="index.js"></script>
+    <!-- Featured Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+
+            <div class="project-grid">
+                <!-- Haven Project -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/haven-hero.jpg" alt="Haven Digital Platform interface showing community support features">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Haven Digital Platform</h3>
+                        <p class="project-tags">UX/UI Design • User Research • Prototyping</p>
+                        <p class="project-description">
+                            Designing an anonymous mental health platform for new parents in
+                            low-resource communities, addressing stigma through human-centered design.
+                        </p>
+                        <a href="haven-case-study.html" class="project-link">View Case Study →</a>
+                    </div>
+                </article>
+
+                <!-- Espresso Machine Project -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/espresso-hero.jpg" alt="3D render of minimalist hand-press espresso machine">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mechanical Espresso Machine</h3>
+                        <p class="project-tags">Product Design • CAD • Prototyping</p>
+                        <p class="project-description">
+                            Engineering a minimalist hand-press espresso machine through iterative
+                            prototyping, FEA analysis, and design for manufacturing.
+                        </p>
+                        <a href="espresso-case-study.html" class="project-link">View Case Study →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    I'm a product designer with an engineering soul. After building systems
+                    for The Linux Foundation and tech startups, I pursued a Master's in
+                    Engineering Design at McMaster University to focus on the human side of technology.
+                </p>
+                <p class="about-text">
+                    I specialize in bridging technical implementation with user-centered design,
+                    particularly in AI-driven products, physical-digital systems, and complex
+                    engineering challenges.
+                </p>
+                <a href="about.html" class="btn btn-primary">Learn More About My Journey →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-text">
+                Looking for a designer who speaks both user and engineer?<br>
+                I'm currently seeking product design opportunities.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:pd.devsecops@gmail.com" class="btn btn-primary">Email Me</a>
+                <a href="https://linkedin.com/in/parthdode" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/d80ep08th" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Parth P. Dodë © 2024</p>
+            <p class="footer-subtext">Designed and built with care</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mechanical Espresso Machine - A product design case study on engineering a minimalist hand-press espresso machine">
+    <title>Mechanical Espresso Machine - Parth P. Dodë</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="case-study.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Parth P. Dodë</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back Navigation -->
+    <div class="case-study-nav">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <a href="haven-case-study.html" class="next-link">Previous Project →</a>
+        </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="case-study-hero">
+        <img src="images/espresso-hero-large.jpg" alt="3D render of minimalist hand-press espresso machine">
+    </div>
+
+    <!-- Case Study Content -->
+    <article class="case-study">
+        <div class="container-narrow">
+
+            <!-- Title & Overview -->
+            <header class="case-study-header">
+                <h1>Minimalist Hand-Press Espresso Machine</h1>
+                <p class="case-study-subtitle">Engineering Function and Form Through Iterative Prototyping</p>
+                <p class="case-study-intro">
+                    A portable, hand-operated espresso machine optimized for weight, size, and manufacturing
+                    simplicity through CAD, FEA simulation, and rapid prototyping.
+                </p>
+
+                <div class="case-study-meta">
+                    <div class="meta-item">
+                        <strong>Role</strong>
+                        <span>Product Designer, Mechanical Engineer</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Team</strong>
+                        <span>3 members (Yuhang Zheng, Alexis Macagno)</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Timeline</strong>
+                        <span>8 weeks</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Tools</strong>
+                        <span>Fusion 360, Prusa 3D Printer, FEA</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Problem Statement -->
+            <section class="case-study-section">
+                <h2>The Challenge</h2>
+                <div class="highlight-box">
+                    <p>Espresso lovers face a dilemma: quality espresso machines are either:</p>
+                    <ul>
+                        <li>Large and heavy (commercial machines: 30+ lbs)</li>
+                        <li>Expensive ($500+)</li>
+                        <li>Complex to operate and maintain</li>
+                        <li>Not portable for travel or small spaces</li>
+                    </ul>
+                </div>
+
+                <p>
+                    Existing portable solutions compromise on quality or require excessive manual force,
+                    making them impractical for daily use.
+                </p>
+
+                <h3>Project Goals</h3>
+                <p>Design and prototype a hand-press espresso machine that:</p>
+                <ol>
+                    <li>Delivers proper espresso (9 bars of pressure, 40-55ml yield)</li>
+                    <li>Minimizes weight and footprint (40cm x 40cm max)</li>
+                    <li>Requires ≤30 lbs of force to operate</li>
+                    <li>Can be assembled/disassembled without tools</li>
+                    <li>Uses 3D printing for rapid prototyping and customization</li>
+                </ol>
+
+                <h3>Design Constraints</h3>
+                <div class="two-column">
+                    <div>
+                        <h4>Technical Requirements:</h4>
+                        <ul>
+                            <li>Consistent 9 bar pressure delivery</li>
+                            <li>Standard 40mm portafilter compatibility</li>
+                            <li>Class 2 lever mechanism (mechanical advantage)</li>
+                            <li>Maximum 30 lb force on handle</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Manufacturing Constraints:</h4>
+                        <ul>
+                            <li>3D printable components (Prusa)</li>
+                            <li>Minimal machined parts (cost/complexity)</li>
+                            <li>Assembly without specialized tools</li>
+                            <li>Material strength vs. weight tradeoff</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Engineering Process -->
+            <section class="case-study-section">
+                <h2>Concept Development</h2>
+
+                <h3>Mechanical Analysis</h3>
+                <p>
+                    We needed to achieve 9 bars of pressure with ≤30 lbs of force. This required
+                    understanding lever mechanics:
+                </p>
+
+                <div class="image-placeholder">
+                    <p>[Lever class diagram and force calculations]</p>
+                </div>
+
+                <div class="design-decision">
+                    <h4>Class 2 Lever Calculation:</h4>
+                    <ul>
+                        <li><strong>Effort arm (handle):</strong> 400mm</li>
+                        <li><strong>Resistance arm (piston):</strong> 48mm</li>
+                        <li><strong>Mechanical advantage:</strong> 8.3:1</li>
+                        <li><strong>Result:</strong> 30 lbs input = 250 lbs output = 9 bars</li>
+                    </ul>
+                    <p>
+                        This informed our geometry: the backbone height and handle length were
+                        mathematically optimized, not arbitrary aesthetic choices.
+                    </p>
+                </div>
+
+                <h3>Initial CAD Design</h3>
+                <div class="image-placeholder">
+                    <p>[Early Fusion 360 models]</p>
+                </div>
+
+                <p>Our first design prioritized function:</p>
+                <ul>
+                    <li>Vertical backbone structure from base to piston</li>
+                    <li>Horizontal handle connected via pivot pin</li>
+                    <li>Sliding portafilter mount</li>
+                    <li>Hook-and-cavity connection (no screws)</li>
+                </ul>
+
+                <div class="question-box">
+                    <p>
+                        <strong>Design Philosophy:</strong> Modularity - Every component designed to
+                        assemble/disassemble easily, clean thoroughly, and replace individually.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Prototyping -->
+            <section class="case-study-section">
+                <h2>Iterative Prototyping</h2>
+
+                <h3>Test Print Strategy</h3>
+                <p>
+                    Rather than printing the full assembly, we tested critical connection points in
+                    isolation. This saved time and material while revealing design flaws early.
+                </p>
+
+                <div class="image-placeholder">
+                    <p>[Test prints - bearing and base-backbone joint]</p>
+                </div>
+
+                <div class="insight-card">
+                    <h4>Test 1: Base-Backbone Joint</h4>
+                    <p><strong>Problem:</strong> Initial hook design was too narrow and fragile</p>
+                    <p><strong>Learning:</strong> Need to account for layer-line orientation in 3D printing</p>
+                    <p><strong>Solution:</strong> Widened hook, added support geometry</p>
+                </div>
+
+                <div class="insight-card">
+                    <h4>Test 2: Handle-Bearing Connection</h4>
+                    <p><strong>Problem:</strong> Tolerance too tight, bearing wouldn't fit</p>
+                    <p><strong>Learning:</strong> Account for 0.2mm offset in FDM printing</p>
+                    <p><strong>Solution:</strong> Adjusted CAD dimensions, perfect fit achieved</p>
+                </div>
+
+                <div class="before-after">
+                    <div class="image-placeholder">
+                        <p>[Before/After joint design comparison]</p>
+                    </div>
+                </div>
+
+                <h3>Full Prototype Assembly</h3>
+                <div class="image-placeholder">
+                    <p>[Assembled prototype on Prusa bed]</p>
+                </div>
+
+                <p>Final printed assembly includes:</p>
+                <ul>
+                    <li><strong>Base (ABS)</strong> - 250g</li>
+                    <li><strong>Backbone (Polycarbonate)</strong> - 289g</li>
+                    <li><strong>Handle (Polycarbonate)</strong> - 180g</li>
+                    <li><strong>Bearing (Nylon12)</strong> - 45g</li>
+                    <li><strong>Portafilter (Aluminum, machined)</strong> - 120g</li>
+                </ul>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-number">884g</span>
+                        <span class="stat-label">Total weight (1.95 lbs)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">67%</span>
+                        <span class="stat-label">Lighter than competitors</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">&lt;2 min</span>
+                        <span class="stat-label">Tool-free assembly time</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEA & Optimization -->
+            <section class="case-study-section">
+                <h2>Finite Element Analysis & Optimization</h2>
+
+                <h3>Testing Material Choices</h3>
+                <p>We needed materials that:</p>
+                <ul>
+                    <li>Provide sufficient strength (safety factor &gt;2)</li>
+                    <li>Minimize weight and cost</li>
+                    <li>Are food-safe and durable</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <p>[Von Mises stress visualizations for 4 materials]</p>
+                </div>
+
+                <h3>Material Comparison</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                    <thead>
+                        <tr style="background-color: var(--color-background-alt);">
+                            <th style="padding: var(--spacing-sm); text-align: left; border-bottom: 2px solid var(--color-border);">Material</th>
+                            <th style="padding: var(--spacing-sm); text-align: left; border-bottom: 2px solid var(--color-border);">Yield (MPa)</th>
+                            <th style="padding: var(--spacing-sm); text-align: left; border-bottom: 2px solid var(--color-border);">Tensile (MPa)</th>
+                            <th style="padding: var(--spacing-sm); text-align: left; border-bottom: 2px solid var(--color-border);">Weight (g)</th>
+                            <th style="padding: var(--spacing-sm); text-align: left; border-bottom: 2px solid var(--color-border);">Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);"><strong>Nylon12</strong></td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">46</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">50</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">244</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border); color: #4caf50; font-weight: 600;">✓ Chosen</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">Aluminum 6061</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">275</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">310</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">650</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">Too heavy</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">PAEK</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">100</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">210</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">318</td>
+                            <td style="padding: var(--spacing-sm); border-bottom: 1px solid var(--color-border);">Overkill</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: var(--spacing-sm);">Polycarbonate</td>
+                            <td style="padding: var(--spacing-sm);">62</td>
+                            <td style="padding: var(--spacing-sm);">69</td>
+                            <td style="padding: var(--spacing-sm);">289</td>
+                            <td style="padding: var(--spacing-sm);">Acceptable</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="design-decision">
+                    <h4>Why Nylon12 Won:</h4>
+                    <ul>
+                        <li>Lowest weight (244g for backbone)</li>
+                        <li>Adequate strength with safety factor of 2.3x</li>
+                        <li>Easily sourced and food-safe</li>
+                        <li>Good printability</li>
+                    </ul>
+                </div>
+
+                <h3>Critical Load Points</h3>
+                <div class="image-placeholder">
+                    <p>[Force diagram showing constraints]</p>
+                </div>
+
+                <p>
+                    The pivot point where the handle connects experiences the highest stress. Our FEA revealed:
+                </p>
+                <ul>
+                    <li><strong>Maximum stress:</strong> 19.8 MPa</li>
+                    <li><strong>Safety factor:</strong> 2.32 (well above minimum 2.0)</li>
+                    <li><strong>Maximum deformation:</strong> 0.8mm (acceptable)</li>
+                </ul>
+
+                <div class="insight-card">
+                    <h4>Design Improvement</h4>
+                    <p>
+                        First FEA showed weakness at 90° angle where handle meets backbone. Solution:
+                        Rounded the transition, reducing stress concentration by 40%. Second FEA
+                        confirmed safe stress levels.
+                    </p>
+                </div>
+
+                <div class="before-after">
+                    <div class="image-placeholder">
+                        <p>[Before/After FEA comparison showing stress reduction]</p>
+                    </div>
+                </div>
+
+                <h3>Shape Optimization</h3>
+                <p>Used Fusion 360's generative design to explore weight reduction:</p>
+                <ul>
+                    <li><strong>Input:</strong> Maintain stiffness, reduce mass 20-40%</li>
+                    <li><strong>Result:</strong> Organic lattice structure reduced weight by 32%</li>
+                    <li><strong>Decision:</strong> Kept simplified design for easier 3D printing</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <p>[Shape optimization process visualization]</p>
+                </div>
+            </section>
+
+            <!-- Final Design -->
+            <section class="case-study-section">
+                <h2>The Solution</h2>
+                <p class="lead">
+                    A minimalist hand-press espresso machine that delivers café-quality results in a
+                    portable, tool-free package.
+                </p>
+
+                <div class="image-placeholder large">
+                    <p>[Final render with component callouts]</p>
+                </div>
+
+                <h3>Final Specifications</h3>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-number">35cm</span>
+                        <span class="stat-label">Height</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">20cm</span>
+                        <span class="stat-label">Width</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">884g</span>
+                        <span class="stat-label">Weight</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">9 bars</span>
+                        <span class="stat-label">Pressure</span>
+                    </div>
+                </div>
+
+                <h3>Component Breakdown</h3>
+
+                <div class="feature">
+                    <h4>1. Base (ABS)</h4>
+                    <ul>
+                        <li>Low center of gravity for stability</li>
+                        <li>Cavity for backbone hook connection</li>
+                        <li>Recessed area for portafilter drip collection</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h4>2. Backbone (Polycarbonate)</h4>
+                    <ul>
+                        <li>Optimized for strength-to-weight ratio</li>
+                        <li>Integrated hook connection mechanism</li>
+                        <li>Flat surface for portafilter slide-lock</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h4>3. Handle (Polycarbonate)</h4>
+                    <ul>
+                        <li>Ergonomic curve for comfortable grip</li>
+                        <li>400mm lever arm for mechanical advantage</li>
+                        <li>Single-pin pivot connection</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h4>4. Portafilter (Machined Aluminum)</h4>
+                    <ul>
+                        <li>Standard 40mm basket (universal compatibility)</li>
+                        <li>CNC machined for precision fit</li>
+                        <li>Rubber gasket seal for leak prevention</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h4>5. Piston Assembly (Stainless Steel + Rubber)</h4>
+                    <ul>
+                        <li>Food-safe stainless steel construction</li>
+                        <li>Silicone gasket for pressure seal</li>
+                        <li>48mm diameter (optimized for force distribution)</li>
+                    </ul>
+                </div>
+
+                <div class="image-placeholder">
+                    <p>[Exploded view OR assembly sequence]</p>
+                </div>
+
+                <h3>Manufacturing Plan</h3>
+
+                <div class="two-column">
+                    <div>
+                        <h4>3D Printed Parts:</h4>
+                        <ul>
+                            <li>Print time: 12 hours total</li>
+                            <li>Material cost: ~$15</li>
+                            <li>Support structures: Minimal</li>
+                            <li>Post-processing: Light sanding on mating surfaces</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Machined Parts:</h4>
+                        <ul>
+                            <li>Portafilter: CNC aluminum (1 hour machine time)</li>
+                            <li>Pin: Standard 8mm steel rod (off-the-shelf)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>Assembly Process:</h4>
+                <ol>
+                    <li>Insert pin through backbone and handle bearing</li>
+                    <li>Hook backbone into base cavity</li>
+                    <li>Slide portafilter into lock position</li>
+                    <li>Insert piston assembly</li>
+                </ol>
+                <p><strong>Total time:</strong> &lt;2 minutes, no tools needed</p>
+            </section>
+
+            <!-- Impact & Learnings -->
+            <section class="case-study-section">
+                <h2>Outcomes</h2>
+
+                <div class="two-column">
+                    <div>
+                        <h3>Technical Achievements:</h3>
+                        <ul class="findings-list positive">
+                            <li>67% lighter than comparable portable espresso makers</li>
+                            <li>Delivers consistent 9 bars pressure</li>
+                            <li>Produces quality 50ml espresso shots</li>
+                            <li>Tool-free assembly in under 2 minutes</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Design Achievements:</h3>
+                        <ul class="findings-list positive">
+                            <li>Functional prototype validates concept</li>
+                            <li>Manufacturing-ready design</li>
+                            <li>Modular system allows customization</li>
+                            <li>Aesthetic minimalism matches function</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>What I Learned</h3>
+
+                <div class="learning">
+                    <h4>Design for Manufacturing (DFM):</h4>
+                    <p>
+                        The gap between "looks good in CAD" and "actually works when printed" taught me to
+                        respect manufacturing constraints early. Testing isolated components saved us from
+                        printing (and discarding) multiple full assemblies.
+                    </p>
+                </div>
+
+                <div class="learning">
+                    <h4>Material selection is a system decision:</h4>
+                    <p>
+                        We couldn't just pick "the strongest material." Weight, cost, printability,
+                        food-safety, and strength all had to be balanced. FEA helped make this decision
+                        data-driven rather than guesswork.
+                    </p>
+                </div>
+
+                <div class="learning">
+                    <h4>Iteration is non-linear:</h4>
+                    <p>
+                        We went back and forth between CAD and printer multiple times. Each test revealed
+                        new considerations (tolerances, orientation, support needs). Embracing this messy
+                        process led to a better result.
+                    </p>
+                </div>
+
+                <div class="learning">
+                    <h4>Engineering + Aesthetics:</h4>
+                    <p>
+                        The final design is minimal not just for style, but because every element serves
+                        a function. The curved handle isn't decoration—it's ergonomics. The open frame
+                        isn't minimalism—it's weight reduction. When form follows function, beauty emerges
+                        naturally.
+                    </p>
+                </div>
+
+                <h3>Next Steps</h3>
+                <p>If I continued this project:</p>
+
+                <div class="two-column">
+                    <div>
+                        <h4>Short-term:</h4>
+                        <ul>
+                            <li>Test 100+ espresso cycles for durability</li>
+                            <li>Experiment with metal backbone for premium version</li>
+                            <li>Create modular handle designs (short/long/adjustable)</li>
+                            <li>Develop custom portafilter basket for better crema</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Long-term:</h4>
+                        <ul>
+                            <li>Design collapsible version for backpacking</li>
+                            <li>Explore injection molding for production scale</li>
+                            <li>Add pressure gauge for consistency feedback</li>
+                            <li>Create ecosystem of accessories (grinder, travel case)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Reflection</h3>
+                <p>
+                    This project reinforced that good product design sits at the intersection of user
+                    needs, technical feasibility, and manufacturing reality. Every curve, dimension, and
+                    material choice was justified by constraint or requirement—nothing was arbitrary.
+                </p>
+                <p>
+                    Working in CAD, FEA, and physical prototyping taught me to think in systems rather
+                    than individual components. The portafilter affects the backbone. The handle length
+                    affects required material strength. Everything connects.
+                </p>
+                <p>
+                    This is the kind of physical product design I want to continue pursuing: thoughtful,
+                    functional, elegant solutions to real problems.
+                </p>
+            </section>
+
+        </div>
+    </article>
+
+    <!-- More Projects -->
+    <section class="more-projects">
+        <div class="container">
+            <h2 class="section-title">More Projects</h2>
+            <div class="project-grid-small">
+                <a href="haven-case-study.html" class="project-card-small">
+                    <div class="project-image-small">
+                        <img src="images/haven-thumb.jpg" alt="Haven Platform">
+                    </div>
+                    <h3>Haven Digital Platform</h3>
+                    <p>UX/UI Design</p>
+                </a>
+                <a href="about.html" class="project-card-small">
+                    <div class="project-image-small">
+                        <div class="about-preview-card">About Me</div>
+                    </div>
+                    <h3>Learn About My Journey</h3>
+                    <p>Engineer to Designer</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Parth P. Dodë © 2024</p>
+            <p class="footer-subtext">Designed and built with care</p>
+        </div>
+    </footer>
+</body>
+</html>
