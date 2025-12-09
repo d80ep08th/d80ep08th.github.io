@@ -563,6 +563,306 @@ a:hover {
 }
 
 /* ===================================
+   Projects Page Styles
+   =================================== */
+
+/* Projects Hero */
+.projects-hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: var(--spacing-xxl) 0 var(--spacing-xl);
+    text-align: center;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    text-align: center;
+}
+
+/* Projects Grid - Large Featured Cards */
+.projects-section {
+    padding: var(--spacing-xxl) 0;
+}
+
+.projects-grid-large {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xxl);
+    margin-top: var(--spacing-xl);
+}
+
+.project-card-featured {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.project-card-featured:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.project-image-featured {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-background-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image-featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card-featured:hover .project-image-featured img {
+    transform: scale(1.05);
+}
+
+.placeholder-project {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.project-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.badge-ux {
+    background: rgba(74, 144, 226, 0.9);
+    color: white;
+}
+
+.badge-engineering {
+    background: rgba(156, 39, 176, 0.9);
+    color: white;
+}
+
+.badge-ai {
+    background: rgba(102, 126, 234, 0.9);
+    color: white;
+}
+
+.project-content-featured {
+    padding: var(--spacing-xl);
+}
+
+.project-title-large {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+.project-description-large {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+}
+
+.project-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.stat-item {
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.stat-highlight {
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-size: 1.125rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+}
+
+.tag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-background-alt);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+/* Project Categories */
+.project-categories {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-background-alt);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.category-card {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+.category-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+}
+
+.category-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-card li {
+    padding: var(--spacing-xs) 0;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+.category-card li::before {
+    content: "→";
+    margin-right: var(--spacing-xs);
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+/* Skills Showcase */
+.skills-showcase {
+    padding: var(--spacing-xxl) 0;
+}
+
+.skills-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.skill-category-compact h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.pill {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #667eea 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Projects CTA */
+.projects-cta {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-background-alt);
+    text-align: center;
+}
+
+.projects-cta h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.projects-cta p {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design for Projects Page */
+@media (max-width: 768px) {
+    .project-image-featured {
+        height: 250px;
+    }
+
+    .project-title-large {
+        font-size: 1.5rem;
+    }
+
+    .project-description-large {
+        font-size: 1rem;
+    }
+
+    .project-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .category-grid,
+    .skills-grid-compact {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+/* ===================================
    Three.js Canvas
    =================================== */
 #three-canvas {
