@@ -640,7 +640,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         chars.forEach(char => {
             const span = document.createElement('span');
-            span.textContent = char;
+            // Preserve spaces by using non-breaking space or keeping normal space rendering
+            if (char === ' ') {
+                span.innerHTML = '&nbsp;';
+            } else {
+                span.textContent = char;
+            }
             span.style.opacity = '0';
             span.style.display = 'inline-block';
             el.appendChild(span);
